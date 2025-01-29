@@ -7,9 +7,9 @@ export default function Home() {
         {/* Center hero Entrepreneurship starts image */}
         <div className="flex justify-center mb-12 mt-4">
           <img 
-            src="./assets/Happening.png" 
+            src="/assets/Happening.png" 
             alt="Entrepreneurship starts" 
-            className="w-full max-w-lg h-48"
+            className="w-full max-w-lg h-48 object-contain"
           />
         </div>
 
