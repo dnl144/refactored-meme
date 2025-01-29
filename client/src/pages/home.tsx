@@ -1,13 +1,16 @@
 import { Card } from "@/components/ui/card";
 
 export default function Home() {
+  // Get base URL from environment variable, default to empty string
+  const baseUrl = import.meta.env.VITE_BASE_URL ? `/${import.meta.env.VITE_BASE_URL}` : '';
+
   return (
     <div className="min-h-screen bg-black relative">
       <div className="max-w-2xl mx-auto p-4">
         {/* Center hero Entrepreneurship starts image */}
         <div className="flex justify-center mb-12 mt-4">
           <img 
-            src="/assets/Happening.png" 
+            src={`${baseUrl}/assets/Happening.png`}
             alt="Entrepreneurship starts" 
             className="w-full max-w-lg h-48 object-contain"
           />
