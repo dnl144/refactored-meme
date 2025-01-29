@@ -22,7 +22,7 @@ export default function Home() {
     <div className="min-h-screen bg-black relative">
       {/* Top-left Where is the start image */}
       <img 
-        src="/assets/Where is the.png" 
+        src="/assets/cornerlogo.png" 
         alt="Where is the start?" 
         className="absolute top-4 left-4 h-16 w-auto"
       />
