@@ -31,15 +31,22 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Build
-        run: npm run build
+      - name: Build Frontend Only
+        run: |
+          # Only build the frontend
+          npx vite build
+          # Debug output
+          echo "Contents of dist directory:"
+          ls -la dist/
+          echo "Contents of dist/public directory:"
+          ls -la dist/public/
         env:
           VITE_BASE_URL: '/${{ github.event.repository.name }}'
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist/public'
+          path: 'dist/public'
 
   deploy:
     needs: build
