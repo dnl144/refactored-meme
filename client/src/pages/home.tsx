@@ -20,19 +20,19 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-black relative">
-      {/* Top-left Happening image */}
+      {/* Top-left Where is the start image */}
       <img 
-        src="/attached_assets/Happening.png" 
-        alt="Entrepreneurship starts" 
+        src="/assets/Where is the.png" 
+        alt="Where is the start?" 
         className="absolute top-4 left-4 h-16 w-auto"
       />
 
       <div className="max-w-2xl mx-auto p-4">
-        {/* Center hero image */}
+        {/* Center hero Entrepreneurship starts image */}
         <div className="flex justify-center mb-12 mt-8">
           <img 
-            src="/attached_assets/Where is the.png" 
-            alt="Where is the start?" 
+            src="/assets/Happening.png" 
+            alt="Entrepreneurship starts" 
             className="w-full max-w-lg h-auto"
           />
         </div>
