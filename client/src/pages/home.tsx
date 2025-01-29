@@ -24,7 +24,7 @@ export default function Home() {
       <img 
         src="/assets/cornerlogo.png" 
         alt="Where is the start?" 
-        className="absolute top-4 left-4 h-16 w-auto"
+        className="absolute top-4 left-4 h-48 w-auto"
       />
 
       <div className="max-w-2xl mx-auto p-4">
@@ -33,7 +33,7 @@ export default function Home() {
           <img 
             src="/assets/Happening.png" 
             alt="Entrepreneurship starts" 
-            className="w-full max-w-lg h-auto"
+            className="w-full max-w-lg h-48"
           />
         </div>
 
