@@ -31,15 +31,32 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Debug Environment
+        run: |
+          pwd
+          echo "Current directory contents:"
+          ls -la
+          echo "Node version:"
+          node --version
+          echo "NPM version:"
+          npm --version
+
       - name: Build Frontend Only
         run: |
           # Only build the frontend
           npx vite build
-          # Debug output
+
+          # Debug output for build artifacts
           echo "Contents of dist directory:"
           ls -la dist/
           echo "Contents of dist/public directory:"
           ls -la dist/public/
+
+          # Ensure the build output exists
+          if [ ! -d "dist/public" ]; then
+            echo "Error: Build output directory not found!"
+            exit 1
+          fi
         env:
           VITE_BASE_URL: '/${{ github.event.repository.name }}'
 
