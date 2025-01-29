@@ -12,16 +12,16 @@ export default function Home() {
 
   if (error) {
     return (
-      <Card className="p-6 max-w-2xl mx-auto mt-8">
+      <Card className="p-6 max-w-2xl mx-auto mt-8 bg-background/80">
         <p className="text-red-500">Failed to load tweets. Please try again later.</p>
       </Card>
     );
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-black">
       <div className="max-w-2xl mx-auto p-4">
-        <h1 className="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
+        <h1 className="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
           Where is the start?
         </h1>
 

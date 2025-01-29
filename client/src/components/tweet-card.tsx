@@ -11,7 +11,7 @@ interface TweetCardProps {
 
 export default function TweetCard({ tweet }: TweetCardProps) {
   const shareUrl = `https://twitter.com/${tweet.username}/status/${tweet.id}`;
-  
+
   const handleShare = async () => {
     try {
       await navigator.share({
@@ -26,7 +26,7 @@ export default function TweetCard({ tweet }: TweetCardProps) {
   };
 
   return (
-    <Card className="hover:bg-muted/50 transition-colors">
+    <Card className="hover:bg-muted/10 transition-colors border-neutral-800 bg-black">
       <CardContent className="pt-6">
         <div className="flex gap-4">
           <Avatar>
@@ -35,14 +35,14 @@ export default function TweetCard({ tweet }: TweetCardProps) {
           </Avatar>
           <div className="flex-1">
             <div className="flex items-center gap-2">
-              <span className="font-semibold">{tweet.name}</span>
-              <span className="text-muted-foreground">@{tweet.username}</span>
-              <span className="text-muted-foreground">·</span>
-              <time className="text-muted-foreground">
+              <span className="font-semibold text-neutral-100">{tweet.name}</span>
+              <span className="text-neutral-500">@{tweet.username}</span>
+              <span className="text-neutral-500">·</span>
+              <time className="text-neutral-500">
                 {new Date(tweet.createdAt).toLocaleDateString()}
               </time>
             </div>
-            <p className="mt-2 whitespace-pre-wrap">{tweet.text}</p>
+            <p className="mt-2 whitespace-pre-wrap text-neutral-100">{tweet.text}</p>
             {tweet.mediaUrl && (
               <img 
                 src={tweet.mediaUrl} 
@@ -53,21 +53,21 @@ export default function TweetCard({ tweet }: TweetCardProps) {
           </div>
         </div>
       </CardContent>
-      <Separator />
+      <Separator className="bg-neutral-800" />
       <CardFooter className="justify-between py-4">
-        <Button variant="ghost" size="sm" className="gap-2">
+        <Button variant="ghost" size="sm" className="gap-2 text-neutral-500 hover:text-blue-400">
           <MessageCircle className="h-4 w-4" />
           <span>{tweet.replyCount}</span>
         </Button>
-        <Button variant="ghost" size="sm" className="gap-2">
+        <Button variant="ghost" size="sm" className="gap-2 text-neutral-500 hover:text-green-400">
           <Repeat2 className="h-4 w-4" />
           <span>{tweet.retweetCount}</span>
         </Button>
-        <Button variant="ghost" size="sm" className="gap-2">
+        <Button variant="ghost" size="sm" className="gap-2 text-neutral-500 hover:text-pink-600">
           <Heart className="h-4 w-4" />
           <span>{tweet.likeCount}</span>
         </Button>
-        <Button variant="ghost" size="sm" onClick={handleShare}>
+        <Button variant="ghost" size="sm" onClick={handleShare} className="text-neutral-500 hover:text-blue-400">
           <Share2 className="h-4 w-4" />
         </Button>
       </CardFooter>
