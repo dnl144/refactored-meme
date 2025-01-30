@@ -3,8 +3,13 @@ import { Card } from "@/components/ui/card";
 export default function Home() {
   // Get base URL from environment variable or detect GitHub Pages
   const baseUrl = import.meta.env.VITE_BASE_URL 
-    ? `/${import.meta.env.VITE_BASE_URL}`.replace(/\/+/g, '/') 
+    ? `/${import.meta.env.VITE_BASE_URL}`
     : '';
+
+  // Remove any double slashes from the final path
+  const getAssetPath = (path: string) => {
+    return `${baseUrl}/assets/${path}`.replace(/\/+/g, '/');
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black">
@@ -12,7 +17,7 @@ export default function Home() {
         {/* Hero Section */}
         <div className="space-y-4 text-center mb-12">
           <img 
-            src={`${baseUrl}/assets/centrelogo.png`.replace(/\/+/g, '/')}
+            src={getAssetPath('centrelogo.png')}
             alt="Where is the start?"
             className="w-full max-w-2xl mx-auto h-auto"
           />

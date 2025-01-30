@@ -13,7 +13,11 @@
     <meta name="twitter:description" content="A collection of X.com posts in a beautiful timeline" />
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>" />
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    <base href="/" />
+    <script>
+      // Dynamically set base href for GitHub Pages
+      const baseUrl = import.meta.env.VITE_BASE_URL ? `/${import.meta.env.VITE_BASE_URL}/` : '/';
+      document.write(`<base href="${baseUrl}" />`);
+    </script>
   </head>
   <body>
     <div id="root"></div>
