@@ -10,7 +10,7 @@ export default function Home() {
         {/* Hero Section */}
         <div className="space-y-4 text-center mb-12">
           <img 
-            src={`${baseUrl}/assets/centrelogo.png`}
+            src="/assets/centrelogo.png"
             alt="Where is the start?"
             className="w-full max-w-2xl mx-auto h-auto"
           />
