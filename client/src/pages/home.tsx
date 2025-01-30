@@ -9,9 +9,11 @@ export default function Home() {
       <div className="max-w-4xl mx-auto px-4 py-8">
         {/* Hero Section */}
         <div className="space-y-4 text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
-            Where is the start?
-          </h1>
+          <img 
+            src={`${baseUrl}/assets/centrelogo.png`}
+            alt="Where is the start?"
+            className="w-full max-w-2xl mx-auto h-auto"
+          />
           <p className="text-gray-400 text-lg md:text-xl">
             Join us on the journey of entrepreneurship
           </p>
