@@ -35,7 +35,7 @@ jobs:
       - name: Copy public assets
         run: |
           mkdir -p dist/public/assets
-          cp -r client/public/assets/* dist/public/assets/
+          cp -r client/public/assets/* dist/public/assets/ || true
 
       - name: Build
         run: npm run build

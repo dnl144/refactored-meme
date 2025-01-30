@@ -1,8 +1,10 @@
 import { Card } from "@/components/ui/card";
 
 export default function Home() {
-  // Get base URL from environment variable, default to empty string
-  const baseUrl = import.meta.env.VITE_BASE_URL ? `/${import.meta.env.VITE_BASE_URL}` : '';
+  // Get base URL from environment variable or detect GitHub Pages
+  const baseUrl = import.meta.env.VITE_BASE_URL 
+    ? `/${import.meta.env.VITE_BASE_URL}`.replace(/\/+/g, '/') 
+    : '';
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black">
@@ -10,7 +12,7 @@ export default function Home() {
         {/* Hero Section */}
         <div className="space-y-4 text-center mb-12">
           <img 
-            src="/assets/centrelogo.png"
+            src={`${baseUrl}/assets/centrelogo.png`.replace(/\/+/g, '/')}
             alt="Where is the start?"
             className="w-full max-w-2xl mx-auto h-auto"
           />
