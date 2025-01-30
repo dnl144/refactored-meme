@@ -15,7 +15,7 @@ export default function Home() {
             className="w-full max-w-2xl mx-auto h-auto"
           />
           <p className="text-gray-400 text-lg md:text-xl">
-            Join us on the journey of entrepreneurship
+            Where is the start?
           </p>
         </div>
 
