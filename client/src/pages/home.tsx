@@ -1,13 +1,11 @@
 import { Card } from "@/components/ui/card";
 
 export default function Home() {
-  // Get base URL from environment variable or detect GitHub Pages
-  const baseUrl = import.meta.env.VITE_BASE_URL 
-    ? `/${import.meta.env.VITE_BASE_URL}`
-    : '';
-
-  // Remove any double slashes from the final path
+  // Get base URL from window location for GitHub Pages
   const getAssetPath = (path: string) => {
+    const baseUrl = window.location.pathname.startsWith('/refactored-meme') 
+      ? '/refactored-meme'
+      : '';
     return `${baseUrl}/assets/${path}`.replace(/\/+/g, '/');
   };
 
